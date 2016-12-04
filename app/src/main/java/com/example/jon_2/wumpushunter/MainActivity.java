@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void startGame(View view) {
@@ -22,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(name);
 
        }
+
+        Maze maze = new Maze();
+        maze.generateMaze();
     }
 
 }
