@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Maze maze = new Maze();
         maze.generateMaze(0);
 
-        String[] gameData=new String[];
+        String[] gameData=new String[3];
 
         Intent intent = new Intent(getBaseContext(), GameWindow.class);
         intent.putExtra(EXTRA_MESSAGE, gameData);
