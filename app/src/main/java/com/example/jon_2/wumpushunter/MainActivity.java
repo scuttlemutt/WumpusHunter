@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,11 +25,19 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(name);
         if(name!=null){
             System.out.println(name);
-
        }
 
+//        Spinner mySpinner=(Spinner) findViewById(R.id.spinner);
+//        String sides = mySpinner.getSelectedItem().toString();
+
+        Spinner mySpinner=(Spinner) findViewById(R.id.vertexSpinner);
+        String vertexes = mySpinner.getSelectedItem().toString();
+
+        Spinner mySpinner2=(Spinner) findViewById(R.id.connectionSpinner);
+        String connections = mySpinner2.getSelectedItem().toString();
+
         Maze maze = new Maze();
-        maze.generateMaze(0);
+        maze.generateMaze2(Integer.parseInt(vertexes), Integer.parseInt(connections));
 
         String[] gameData=new String[3];
 
