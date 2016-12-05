@@ -1,11 +1,14 @@
 package com.example.jon_2.wumpushunter;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    public final static String EXTRA_MESSAGE = "com.example.WumpusHunter.Main";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,16 @@ public class MainActivity extends AppCompatActivity {
        }
 
         Maze maze = new Maze();
-        maze.generateMaze();
+        maze.generateMaze(0);
+
+        String[] gameData=new String[];
+
+        Intent intent = new Intent(getBaseContext(), GameWindow.class);
+        intent.putExtra(EXTRA_MESSAGE, gameData);
+        startActivity(intent);
+
+
+
     }
 
 }
